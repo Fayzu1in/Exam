@@ -6,7 +6,7 @@
 }
 
 .container {
-  width: 1150px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 .container .header {
@@ -58,12 +58,11 @@
   color: white;
 }
 .container .hero {
-  height: 485px;
   display: flex;
   margin-top: 63px;
 }
 .container .hero__text {
-  flex: 0 1 483px;
+  max-width: 483px;
   font-family: "Roboto";
   margin-top: 27px;
 }
@@ -84,16 +83,18 @@
   position: relative;
 }
 .container .hero__img img {
-  position: absolute;
-  left: 56px;
+  display: block;
+  max-width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .container .hero {
+    flex-flow: column;
+  }
 }
 
 .line {
-  position: relative;
-  z-index: 1;
-  padding-left: 145px;
-}
-.line__button {
+  display: inline-block;
+  margin-top: 27px;
   font-family: "Roboto";
   padding: 18px 30px;
   font-size: 22px;
@@ -103,25 +104,193 @@
   color: black;
   transition-duration: 0.3s;
 }
-.line__button:hover {
+.line:hover {
   background-color: black;
   color: white;
 }
-.line:before, .line:after {
-  content: "";
-  display: inline-block;
+
+.container .section {
+  display: flex;
+}
+.container .section__img_percent {
+  margin-top: 138px;
+  margin-right: 104px;
+}
+.container .section__img_percent img {
+  width: 483px;
+}
+.container .section__text {
+  font-family: "Roboto";
+}
+.container .section__text-big {
+  font-weight: bold;
+  font-size: 57px;
+  color: #000000;
+  margin-top: 108px;
+}
+.container .section__text-little {
+  font-size: 20px;
+  color: #000000;
+  margin-top: 33px;
+}
+@media screen and (max-width: 600px) {
+  .container .section {
+    flex-flow: column;
+  }
+  .container .section__img_percent img {
+    width: 100%;
+  }
+}
+.container .offer {
+  font-family: "Roboto";
+}
+.container .offer__text {
+  margin-top: 88px;
+  font-size: 58px;
+}
+.container .offer__cards {
+  display: flex;
+  margin-top: 63px;
+}
+.container .offer__cards-card {
+  width: 308px;
+  margin-right: 54px;
+  margin-bottom: 54px;
+}
+.container .offer__cards-card-what_about {
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 600px) {
+  .container .offer__cards {
+    flex-flow: column;
+  }
+}
+.container .offer__button {
+  background-color: #fdeced;
+  font-size: 18px;
+  transition-duration: 0.3s;
+  padding: 12px 30px;
+  color: #000000;
+  border-radius: 100px;
+  font-weight: bold;
+}
+.container .offer__button:hover {
+  background-color: #f7b2b7;
+}
+
+.main {
+  background-color: #fdeced;
+  margin-top: 126px;
+}
+
+.pinktext {
+  font-size: 58px;
+  padding-top: 88px;
+}
+
+.logos {
+  display: flex;
+  font-family: "Roboto";
+}
+.logos__leftblock {
+  font-size: 27px;
+  width: 236px;
+  margin-top: 129px;
+  margin-right: 99px;
+}
+.logos__rightblock {
+  width: 700px;
+  max-width: 100%;
+  margin-top: 108px;
+}
+.logos__rightblock img {
   width: 100%;
-  height: 1px;
-  background: #eaeef2;
-  z-index: -1;
-  position: relative;
-  vertical-align: middle;
 }
-.line:before {
-  right: 15px;
-  margin: 0 0 0 -100%;
+@media screen and (max-width: 600px) {
+  .logos {
+    flex-flow: column;
+  }
 }
-.line:after {
-  left: 15px;
-  margin: 0 -100% 0 0;
+
+.preview {
+  display: flex;
+  font-family: "Roboto";
+  margin-top: 36px;
+}
+.preview__hub {
+  margin-top: 193px;
+}
+.preview__hub-bold {
+  font-weight: bold;
+  font-size: 58px;
+}
+.preview__hub-subtitle {
+  font-size: 20px;
+  margin-top: 40px;
+}
+.preview__files {
+  margin-top: 107px;
+}
+.preview__files img {
+  max-width: 100%;
+}
+.preview__button {
+  margin-top: 79px;
+  font-size: 18px;
+  padding: 12px 30px;
+  font-weight: bold;
+  background-color: #fdeced;
+  border-radius: 100px;
+  display: inline-block;
+  color: #000000;
+  transition-duration: 0.3s;
+}
+.preview__button:hover {
+  background-color: #f7b2b7;
+}
+@media screen and (max-width: 600px) {
+  .preview {
+    flex-flow: column;
+  }
+}
+
+.switch {
+  display: flex;
+  padding: 90px;
+  background-color: #8bd4d6;
+  border-radius: 10px;
+  font-family: "Roboto";
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+  margin-top: 108px;
+  margin-bottom: 108px;
+}
+.switch__text-bold {
+  font-weight: bold;
+  font-size: 46px;
+}
+.switch__text-subtitle {
+  font-size: 20px;
+  margin-top: 18px;
+}
+.switch__button {
+  display: inline-block;
+  background-color: #000000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 100px;
+  transition-duration: 0.3s;
+}
+.switch__button:hover {
+  background-color: #fff;
+  color: #000000;
+}
+@media screen and (max-width: 600px) {
+  .switch {
+    flex-flow: column;
+  }
 }
